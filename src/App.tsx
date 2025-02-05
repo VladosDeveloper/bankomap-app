@@ -10,7 +10,7 @@ export type MoneyType = {
     id: string
 }
 
-let defaultMoney: MoneyType[] = [  // типизируем
+const defaultMoney: MoneyType[] = [  // типизируем
     {banknote: 'USD', nominal: 100, id: v1()},
     {banknote: 'USD', nominal: 100, id: v1()},
     {banknote: 'RUB', nominal: 100, id: v1()},
@@ -22,7 +22,7 @@ let defaultMoney: MoneyType[] = [  // типизируем
 ]
 
 
-export const moneyFilter = (money: MoneyType[], filter: BanknotsType): MoneyType[] => {
+const moneyFilter = (money: MoneyType[], filter: BanknotsType): MoneyType[] => {
     const newMoney  = [...money]
 	if (filter === "ALL") return newMoney
 	return newMoney.filter(money => money.banknote === filter)
